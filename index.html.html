@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benevolant | Fresh Fruits & Snacks</title>
+<meta name="description" content="Benevolant — fresh fruits, delicious snacks, and everyday goodness.">
+<style>
+:root{
+  --ink:#17342b; --muted:#6b7d75; --cream:#fbfaf5; --card:#ffffff;
+  --green:#2f7657; --lime:#cde66b; --peach:#ffd8bd; --gold:#f2c75c;
+  --shadow:0 18px 50px rgba(23,52,43,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer;border:0}
+.nav{position:sticky;top:0;z-index:20;background:rgba(251,250,245,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(23,52,43,.08)}
+.nav-inner{max-width:1180px;margin:auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.logo{font-size:25px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--green)}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:700;color:#53665e}
+.nav-links a:hover{color:var(--green)}
+.nav-btn,.hero-btn{background:var(--ink);color:white;border-radius:999px;padding:12px 20px;font-weight:800}
+.hero{max-width:1180px;margin:auto;padding:72px 24px 50px;display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;background:#eef5dc;color:#386047;border-radius:999px;padding:8px 13px;font-size:13px;font-weight:800;margin-bottom:20px}
+h1{font-size:clamp(50px,7vw,84px);line-height:.98;letter-spacing:-4px;max-width:720px}
+h1 em{font-style:normal;color:var(--green)}
+.hero p{font-size:18px;color:var(--muted);max-width:560px;margin:24px 0 30px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.secondary{padding:12px 20px;border:1px solid #d9e0db;border-radius:999px;font-weight:800;background:white}
+.visual{min-height:450px;border-radius:40px;background:linear-gradient(145deg,#dff1aa,#f9c9a9);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.visual:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#fff5c8;top:-70px;right:-50px}
+.bowl{position:absolute;width:300px;height:170px;background:#f9f6ed;border-radius:20px 20px 50% 50%;bottom:85px;left:50%;transform:translateX(-50%) rotate(-2deg);box-shadow:0 25px 40px rgba(23,52,43,.18)}
+.food{position:absolute;font-size:68px;filter:drop-shadow(0 8px 8px rgba(23,52,43,.14));animation:float 4s ease-in-out infinite}
+.f1{left:18%;top:26%}.f2{right:15%;top:37%;animation-delay:.5s}.f3{left:42%;top:15%;animation-delay:1s}.f4{right:27%;bottom:22%;animation-delay:1.5s}.f5{left:18%;bottom:18%;animation-delay:2s}
+@keyframes float{50%{transform:translateY(-12px) rotate(4deg)}}
+.section{max-width:1180px;margin:auto;padding:70px 24px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}
+.kicker{color:var(--green);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:2px}
+h2{font-size:42px;letter-spacing:-2px;line-height:1.05;margin-top:7px}
+.section-head p{color:var(--muted);max-width:440px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--card);border:1px solid #edf0eb;border-radius:25px;padding:18px;box-shadow:0 8px 25px rgba(23,52,43,.05);transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.pic{height:190px;border-radius:19px;display:grid;place-items:center;font-size:78px;background:#eef6d9;margin-bottom:16px}
+.card:nth-child(2) .pic{background:#fff0df}.card:nth-child(3) .pic{background:#e6f2f0}.card:nth-child(4) .pic{background:#fff4c9}
+.card h3{font-size:19px}.card p{font-size:13px;color:var(--muted);margin:5px 0 13px}.price{display:flex;align-items:center;justify-content:space-between;font-weight:900}
+.add{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-size:20px}
+.about{background:var(--ink);color:white;border-radius:38px;padding:55px;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.about p{color:#c8d6d0;margin-top:16px}.checks{display:grid;gap:13px;margin-top:25px}.check{display:flex;gap:10px;align-items:center;font-weight:700}.check i{font-style:normal;background:#9ec75b;color:#17342b;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;font-size:13px}
+.about-art{background:#dff1aa;border-radius:28px;min-height:300px;display:grid;place-items:center;font-size:120px}
+.banner{margin-top:40px;background:linear-gradient(100deg,#dff1aa,#ffd7b9);border-radius:32px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.banner h2{max-width:650px}.banner p{color:#4e6259;margin-top:10px}
+footer{background:#10271f;color:#cbd7d1;margin-top:70px}.footer-inner{max-width:1180px;margin:auto;padding:45px 24px;display:flex;justify-content:space-between;gap:30px}.footer-brand{color:white}.footer-inner p{font-size:13px;margin-top:7px}.social{display:flex;gap:10px}.social a{width:38px;height:38px;border:1px solid #365047;border-radius:50%;display:grid;place-items:center}
+.cart{position:fixed;right:22px;bottom:22px;background:var(--ink);color:white;border-radius:999px;padding:14px 19px;font-weight:900;box-shadow:0 15px 35px rgba(0,0,0,.22);z-index:30}
+.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);background:white;padding:13px 18px;border-radius:12px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:40;font-weight:700}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.nav-links{display:none}.hero{grid-template-columns:1fr;padding-top:45px}.visual{min-height:360px}.grid{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr;padding:32px}.section-head{display:block}.section-head p{margin-top:12px}.banner{display:block}}
+@media(max-width:520px){h1{font-size:50px;letter-spacing:-2.5px}.grid{grid-template-columns:1fr}.pic{height:210px}.about-art{min-height:230px}.footer-inner{display:block}.social{margin-top:20px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">bene<span>volant</span>.</a>
+    <div class="nav-links"><a href="#menu">Menu</a><a href="#about">About</a><a href="#why">Why Us</a><a href="#contact">Contact</a></div>
+    <a class="nav-btn" href="#menu">Order Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="badge">● Fresh every day</div>
+    <h1>Good food.<br><em>Good mood.</em></h1>
+    <p>Fresh fruits and delicious snacks, carefully selected for the little moments that make your day better.</p>
+    <div class="hero-actions"><a class="hero-btn" href="#menu">Explore Menu →</a><a class="secondary" href="#about">Our Story</a></div>
+  </div>
+  <div class="visual" aria-label="Fresh fruit and snack illustration">
+    <div class="food f1">🍊</div><div class="food f2">🍓</div><div class="food f3">🍎</div>
+    <div class="bowl"></div><div class="food f4">🥨</div><div class="food f5">🍇</div>
+  </div>
+</header>
+
+<section class="section" id="menu">
+  <div class="section-head">
+    <div><div class="kicker">Our menu</div><h2>Fresh picks, happy bites.</h2></div>
+    <p>A simple selection of fresh fruits and satisfying snacks for every kind of craving.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="pic">🍓</div><h3>Berry Box</h3><p>Fresh strawberries, blueberries & grapes.</p><div class="price"><span>$8.90</span><button class="add" onclick="add('Berry Box')">+</button></div></article>
+    <article class="card"><div class="pic">🍊</div><h3>Citrus Mix</h3><p>A bright mix of orange, lemon & seasonal citrus.</p><div class="price"><span>$7.50</span><button class="add" onclick="add('Citrus Mix')">+</button></div></article>
+    <article class="card"><div class="pic">🥨</div><h3>Crunchy Bites</h3><p>Golden, crispy snacks made for sharing.</p><div class="price"><span>$6.90</span><button class="add" onclick="add('Crunchy Bites')">+</button></div></article>
+    <article class="card"><div class="pic">🍎</div><h3>Fruit Cup</h3><p>Fresh-cut seasonal fruit, ready to enjoy.</p><div class="price"><span>$5.90</span><button class="add" onclick="add('Fruit Cup')">+</button></div></article>
+  </div>
+  <div class="banner">
+    <div><div class="kicker">Benevolant favorites</div><h2>Something fresh is always waiting for you.</h2><p>Mix your favorites and make your own perfect snack box.</p></div>
+    <a class="hero-btn" href="#contact">Get in touch →</a>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="about">
+    <div>
+      <div class="kicker" style="color:#b9df68">About Benevolant</div>
+      <h2>Simple ingredients. Thoughtful choices.</h2>
+      <p>At Benevolant, we believe good food doesn't need to be complicated. We bring together fresh fruit and tasty snacks with a focus on quality, variety and everyday enjoyment.</p>
+      <div class="checks"><div class="check"><i>✓</i> Carefully selected ingredients</div><div class="check"><i>✓</i> Fresh seasonal choices</div><div class="check"><i>✓</i> Made for sharing</div></div>
+    </div>
+    <div class="about-art">🍉</div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="section-head"><div><div class="kicker">Why Benevolant</div><h2>Freshness with a little personality.</h2></div></div>
+  <div class="grid">
+    <article class="card"><div class="pic">🌱</div><h3>Fresh first</h3><p>We keep our selection bright, fresh and inviting.</p></article>
+    <article class="card"><div class="pic">✨</div><h3>Good quality</h3><p>Thoughtful choices that you can feel good about.</p></article>
+    <article class="card"><div class="pic">🤝</div><h3>Made for people</h3><p>Friendly food for quick breaks and shared moments.</p></article>
+    <article class="card"><div class="pic">💚</div><h3>Benevolant spirit</h3><p>A little goodness in every box, bowl and bite.</p></article>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <div><div class="logo footer-brand">bene<span>volant</span>.</div><p>Fresh fruits & snacks for good days.</p><p style="margin-top:16px">© 2026 Benevolant. All rights reserved.</p></div>
+    <div><strong style="color:white">Contact</strong><p>hello@benevolant.com</p><p>+00 123 456 789</p></div>
+    <div class="social"><a href="#">ig</a><a href="#">fb</a><a href="#">tk</a></div>
+  </div>
+</footer>
+
+<button class="cart" id="cart">🛒 Cart <span id="count">0</span></button>
+<div class="toast" id="toast">Added to your cart ✓</div>
+<script>
+let count=0;
+function add(name){
+  count++;
+  document.getElementById('count').textContent=count;
+  const t=document.getElementById('toast');
+  t.textContent=name+' added to your cart ✓';
+  t.classList.add('show');
+  clearTimeout(window.toastTimer);
+  window.toastTimer=setTimeout(()=>t.classList.remove('show'),1800);
+}
+document.getElementById('cart').addEventListener('click',()=>{
+  const t=document.getElementById('toast');
+  t.textContent=count ? `You have ${count} item${count>1?'s':''} in your cart.` : 'Your cart is empty.';
+  t.classList.add('show');
+  clearTimeout(window.toastTimer);
+  window.toastTimer=setTimeout(()=>t.classList.remove('show'),1800);
+});
+</script>
+</body>
+</html>
